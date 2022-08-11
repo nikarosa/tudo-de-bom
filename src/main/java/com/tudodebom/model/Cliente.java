@@ -1,19 +1,66 @@
 package com.tudodebom.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+/**
+* Cliente é uma classe modelo com os dados necessários para
+* as operações de CRUD.
+* 
+* @author Alexandre Ferreira
+* 
+*/
+@Entity
 public class Cliente {
+	
+	/**
+	 * id do cliente:
+	 * dado de controle para o banco de dados.
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	/**
+	 * Nome do cliente:
+	 * dado pessoal do cliente.
+	 */
 	private String nome;
+	
+	/**
+	 * CPF do cliente:
+	 * dado pessoal do cliente.
+	 */
 	private String cpf;
+	
+	/**
+	 * Email do cliente:
+	 * dado de contato do cliente.
+	 */
 	private String email;
+	
+	/**
+	 * Telefone do cliente:
+	 * dado de contato do cliente.
+	 */
 	private String telefone;
-		
+	
+
+	/**
+	 * Construtor padrão da classe Cliente.
+	 */
 	public Cliente() {
 		super();
 	}
-	
-	public Cliente(Long id, String nome, String cpf, String email, String telefone) {
+		
+	/**
+	 * Construtor com todos o parâmentros,
+	 * menos o ID porque é um dado que será gerado automaticamente pelo bando de dados.
+	 */
+	public Cliente(String nome, String cpf, String email, String telefone) {
 		super();
-		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
@@ -65,6 +112,5 @@ public class Cliente {
 		return "Cliente [id=" + id + ", nome=" + nome + ", cpf=" 
 				+ cpf + ", email=" + email + ", telefone=" + telefone + "]";
 	}
-	
-	
+		
 }
