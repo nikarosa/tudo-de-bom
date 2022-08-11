@@ -41,3 +41,5 @@ Repositório para a implementação do desafio 01 do programa 'if black then cod
   * H2 Database
   * MySQL Driver
   
+  Comando para gerar a documentação utilizando o Maven: mvn -Dshow=private javadoc:javadoc
+  
