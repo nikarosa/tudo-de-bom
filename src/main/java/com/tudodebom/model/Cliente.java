@@ -1,7 +1,7 @@
 package com.tudodebom.model;
 
 public class Cliente {
-	private Long id;
+	private int id;
 	private String nome;
 	private String cpf;
 	private String email;
@@ -11,8 +11,7 @@ public class Cliente {
 		super();
 	}
 	
-	public Cliente(Long id, String nome, String cpf, String email, String telefone) {
-		super();
+	public Cliente(int id, String nome, String cpf, String email, String telefone) {
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
@@ -20,11 +19,11 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 	
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
