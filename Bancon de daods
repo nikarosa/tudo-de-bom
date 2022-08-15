@@ -1,0 +1,56 @@
+CREATE TABLE `gerente` (
+	`id_gerente` int NOT NULL AUTO_INCREMENT,
+	`nome_gerente` varchar(50) NOT NULL,
+	`email_gerente` varchar(50) NOT NULL,
+	`telefone_gerente` varchar(11) NOT NULL,
+	`senha_gerente` varchar(11) NOT NULL,
+	PRIMARY KEY (`id_gerente`)
+);
+
+CREATE TABLE `produtos` (
+	`id_produtos` int NOT NULL AUTO_INCREMENT,
+	`nome_produto` varchar(50) NOT NULL,
+	`qtd_produto` INT NOT NULL,
+	`valor_produto` DECIMAL(6,2) NOT NULL,
+	`tipo_produto` BOOLEAN NOT NULL,
+	`gen_produto` BOOLEAN NOT NULL,
+	PRIMARY KEY (`id_produtos`)
+);
+
+CREATE TABLE `vendedor` (
+	`id_vendedor` int NOT NULL AUTO_INCREMENT,
+	`nome_vendedor` varchar(50) NOT NULL,
+	`email_vendedor` varchar(50) NOT NULL,
+	`telefone_vendedor` varchar(11) NOT NULL,
+	`senha_vendedor` varchar(11) NOT NULL,
+	`id_gerente` int NOT NULL,
+	PRIMARY KEY (`id_vendedor`)
+);
+
+CREATE TABLE `pedidos` (
+	`id_pedido` int NOT NULL AUTO_INCREMENT,
+	`id_vendedor` int NOT NULL,
+	`id_cliente` int NOT NULL,
+	`id_produto` int NOT NULL,
+	`pedido_qtd_produto` INT NOT NULL,
+	`pedido_vl_produto` DECIMAL(6,2) NOT NULL,
+	`pedido_valor_total` DECIMAL(6,2) NOT NULL,
+	PRIMARY KEY (`id_pedido`)
+);
+
+CREATE TABLE `clientes` (
+	`id_cliente` int NOT NULL AUTO_INCREMENT,
+	`nome_cliente` varchar(50) NOT NULL,
+	`cpf_cliente` varchar(11) NOT NULL,
+	`telefone_cliente` varchar(11) NOT NULL,
+	`email_cliente` varchar(50) NOT NULL,
+	PRIMARY KEY (`id_cliente`)
+);
+
+ALTER TABLE `vendedor` ADD CONSTRAINT `vendedor_fk0` FOREIGN KEY (`id_gerente`) REFERENCES `gerente`(`id_gerente`);
+
+ALTER TABLE `pedidos` ADD CONSTRAINT `pedidos_fk0` FOREIGN KEY (`id_vendedor`) REFERENCES `vendedor`(`id_vendedor`);
+
+ALTER TABLE `pedidos` ADD CONSTRAINT `pedidos_fk1` FOREIGN KEY (`id_cliente`) REFERENCES `clientes`(`id_cliente`);
+
+ALTER TABLE `pedidos` ADD CONSTRAINT `pedidos_fk2` FOREIGN KEY (`id_produto`) REFERENCES `produtos`(`id_produtos`);
