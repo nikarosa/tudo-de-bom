@@ -1,0 +1,3 @@
+com\tudodebom\cliente\model\bean\Dados.class
+com\tudodebom\cliente\model\dao\ClienteDAO.class
+com\tudodebom\cliente\connection\ConnectionFactory.class
