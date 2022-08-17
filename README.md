@@ -22,9 +22,20 @@ Repositório para a implementação do desafio 01 do programa 'if black then cod
   d. Testes automatizados, podem ser testes unitários ou testes de integração;
   
   A avaliação será feita a partir da **documentação da aplicação**.\
-  EndPoints - Estoque
-  1. src/Model/ModelDAO/ProdutoDAO/cadastrarProduto
-  2. src/Model/ModelDAO/ProdutoDAO/atualizarProduto
-  3. src/Model/ModelDAO/ProdutoDAO/listarProduto
-  4. src/Model/ModelDAO/ProdutoDAO/deletarProduto
-  5. src/Model/ModelDAO/ProdutoDAO/buscarProdutoIdNome
+  EndPoints 
+  1. src/DAO/ProdutoDAO/cadastrarProduto
+  2. src/DAO/ProdutoDAO/atualizarProduto
+  3. src/DAO/ProdutoDAO/listarProduto
+  4. src/DAO/ProdutoDAO/deletarProduto
+  5. src/DAO/ProdutoDAO/buscarProdutoIdNome
+  1. src/DAO/PedidoDAO/cadastrarPedido
+  2. src/DAO/PedidoDAO/listarPedidos
+  3. src/DAO/PedidoDAO/listarPedidosIdCliente
+  4. src/DAO/PedidoDAO/listarPedidosIdProduto
+  5. src/DAO/PedidoDAO/listarPedidosIdVendedor
+  6. src/DAO/PedidoDAO/deletarPedido
+  1. src/DAO/PedidoDAO/ inserirCliente
+  2. src/DAO/PedidoDAO/listarClientes
+  3. src/DAO/PedidoDAO/alterarCliente
+  4. src/DAO/PedidoDAO/excluirCliente
+  5. src/DAO/PedidoDAO/listarClientePorNome
