@@ -7,7 +7,7 @@ package controller;
 
 import controllerhelper.LoginCaixaHelper;
 import model.Caixa;
-import modelDAO.CaixaDAO;
+import DAO.CaixaDAO;
 import view.LoginCaixa;
 import view.MenuPrincipal;
 import java.sql.ResultSet;

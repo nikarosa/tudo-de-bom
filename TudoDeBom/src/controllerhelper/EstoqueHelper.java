@@ -7,7 +7,6 @@ package controllerhelper;
 
 import model.Produto;
 import view.Estoque;
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -16,7 +15,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class EstoqueHelper {
 
-    private Estoque view;
+    private final Estoque view;
+    
     public EstoqueHelper(Estoque view) {
        this.view = view;
     }

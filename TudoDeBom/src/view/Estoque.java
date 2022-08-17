@@ -9,12 +9,10 @@ import controller.EstoqueController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JCheckBox;
-import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import model.Produto;
 
 /**
  *
@@ -423,8 +421,5 @@ public class Estoque extends javax.swing.JFrame {
     public void setjTabbedPane1Guias(JTabbedPane jTabbedPane1Guias) {
         this.jTabbedPane1Guias = jTabbedPane1Guias;
     }
-
-
-
 
 }

@@ -1,23 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
-import controllerhelper.EstoqueHelper;
+import DAO.PedidoDAO;
 import DAO.ProdutoDAO;
-import model.Produto;
-import view.Estoque;
+import controllerhelper.EstoqueHelper;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import model.Pedido;
+import model.Produto;
+import view.Estoque;
 
-/**
- *
- * @author marcu
- */
-public class EstoqueController {
+public class PedidoController {
     private final EstoqueHelper helper;
     private final Estoque view;
 
@@ -25,28 +18,20 @@ public class EstoqueController {
      *
      * @param view
      */
-    public EstoqueController(Estoque view) {
+    public PedidoController(Estoque view) {
         this.view = view;
         this.helper = new EstoqueHelper(view);
     }
     
     public void cadastrar() throws ClassNotFoundException {
-        Produto produtoModelo = helper.obterModelo();
+        Pedido pedido = new Pedido();
         
-        new ProdutoDAO().cadastrarProduto(produtoModelo);
+        new PedidoDAO().cadastrarPedido(pedido);
         
         helper.limparTela();
          
     }
-        
-    public void atualizar() throws ClassNotFoundException{
-        Produto produtoModelo = helper.obterModelo();
-    
-        new ProdutoDAO().atualizarProduto(produtoModelo);
-        
-        helper.limparTela();
-    }
-    
+           
     public void deletar() throws ClassNotFoundException{
         Produto produtoModelo = helper.obterModelo();
     
@@ -75,7 +60,7 @@ public class EstoqueController {
                 model.addRow(new Object[]{listaProduto.getId(), listaProduto.getNomeProduto(), listaProduto.getMarcaProduto(), listaProduto.getValorProduto(), listaProduto.getQuantidadeProduto(), listaProduto.getFlag_medicamento(), listaProduto.getFlag_generico()});
             });
 
-        } catch (Exception erro) {
+        } catch (ClassNotFoundException erro) {
                 JOptionPane.showMessageDialog(null, "CrudProduto - buscarTabela" + erro.getMessage());
         }   
     }
@@ -98,5 +83,4 @@ public class EstoqueController {
             JOptionPane.showMessageDialog(null, "CrudProduto - preencherTabela" + erro.getMessage());
         }  
     }
-    
 }

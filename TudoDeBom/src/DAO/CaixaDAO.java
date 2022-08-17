@@ -1,4 +1,4 @@
-package modelDAO;
+package DAO;
 
 import model.Caixa;
 import java.sql.Connection;

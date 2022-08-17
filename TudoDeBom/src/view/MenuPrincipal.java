@@ -36,6 +36,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1Estoque = new javax.swing.JMenuItem();
+        menuPedido = new javax.swing.JMenu();
+        menuItmRealizarPedido = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,6 +65,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        menuPedido.setText("Pedido");
+
+        menuItmRealizarPedido.setText("Realizar Pedido");
+        menuItmRealizarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItmRealizarPedidoActionPerformed(evt);
+            }
+        });
+        menuPedido.add(menuItmRealizarPedido);
+
+        jMenuBar1.add(menuPedido);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -86,6 +100,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void menuItmRealizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItmRealizarPedidoActionPerformed
+        new Pedido().setVisible(true);
+    }//GEN-LAST:event_menuItmRealizarPedidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,5 +146,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem1Estoque;
+    private javax.swing.JMenuItem menuItmRealizarPedido;
+    private javax.swing.JMenu menuPedido;
     // End of variables declaration//GEN-END:variables
 }
