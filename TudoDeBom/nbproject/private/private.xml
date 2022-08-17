@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/alexandre/Documents/TudoDeBom-Gama-IBM/JavaApplication5/src/modelDAO/ProdutoDAO.java</file>
+            <file>file:/home/alexandre/Documents/TudoDeBom-Gama-IBM/JavaApplication5/src/controller/EstoqueController.java</file>
+            <file>file:/home/alexandre/Documents/TudoDeBom-Gama-IBM/JavaApplication5/src/modelDAO/BancoDAO.java</file>
+            <file>file:/home/alexandre/Documents/TudoDeBom-Gama-IBM/JavaApplication5/src/model/Produto.java</file>
+            <file>file:/home/alexandre/Documents/TudoDeBom-Gama-IBM/JavaApplication5/src/modelDAO/CaixaDAO.java</file>
+            <file>file:/home/alexandre/Documents/TudoDeBom-Gama-IBM/JavaApplication5/src/view/Estoque.java</file>
+            <file>file:/home/alexandre/Documents/TudoDeBom-Gama-IBM/JavaApplication5/src/controllerhelper/EstoqueHelper.java</file>
+            <file>file:/home/alexandre/Documents/TudoDeBom-Gama-IBM/JavaApplication5/src/controller/LoginCaixaController.java</file>
+            <file>file:/home/alexandre/Documents/TudoDeBom-Gama-IBM/JavaApplication5/src/view/LoginCaixa.java</file>
+        </group>
+    </open-files>
+</project-private>
