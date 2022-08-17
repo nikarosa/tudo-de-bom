@@ -1,5 +1,5 @@
 # Tudo de bom
-Essa aplicação foi criada no NetBeans
+Essa aplicação foi criada no NetBeans<br>
 Repositório para a implementação do desafio 01 do programa 'if black then code', uma parceria Gama Academy e IBM.
 
  O objetivo é o de implementar uma API em Java.
