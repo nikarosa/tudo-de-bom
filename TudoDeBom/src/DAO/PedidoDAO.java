@@ -42,6 +42,7 @@ public class PedidoDAO {
     
     public ArrayList<Pedido> listarPedidos() throws ClassNotFoundException {
         String sql = "SELECT * FROM pedidos;";
+        
         connection = new BancoDAO().conectaBD();
 
         try {

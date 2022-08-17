@@ -72,10 +72,10 @@ public class EstoqueController {
             ArrayList<Produto> listarProduto = objProduto.listarProduto();
 
             listarProduto.stream().forEach((listaProduto) -> {
-                model.addRow(new Object[]{listaProduto.getId(), listaProduto.getNomeProduto(), listaProduto.getMarcaProduto(), listaProduto.getValorProduto(), listaProduto.getQuantidadeProduto(), listaProduto.getFlag_medicamento(), listaProduto.getFlag_generico()});
+                model.addRow(new Object[]{listaProduto.getId(), listaProduto.getNomeProduto(), listaProduto.getValorProduto(), listaProduto.getQuantidadeProduto(), listaProduto.getFlag_medicamento(), listaProduto.getFlag_generico()});
             });
 
-        } catch (Exception erro) {
+        } catch (ClassNotFoundException erro) {
                 JOptionPane.showMessageDialog(null, "CrudProduto - buscarTabela" + erro.getMessage());
         }   
     }
@@ -91,10 +91,10 @@ public class EstoqueController {
         ArrayList<Produto> listarProduto = objProduto.listarProduto();
 
         listarProduto.stream().forEach((listaProduto) -> {
-            model.addRow(new Object[]{listaProduto.getId(), listaProduto.getNomeProduto(), listaProduto.getMarcaProduto(), listaProduto.getValorProduto(), listaProduto.getQuantidadeProduto(), listaProduto.getFlag_medicamento(), listaProduto.getFlag_generico()});
+            model.addRow(new Object[]{listaProduto.getId(), listaProduto.getNomeProduto(), listaProduto.getValorProduto(), listaProduto.getQuantidadeProduto(), listaProduto.getFlag_medicamento(), listaProduto.getFlag_generico()});
         });
 
-        } catch (Exception erro) {
+        } catch (ClassNotFoundException erro) {
             JOptionPane.showMessageDialog(null, "CrudProduto - preencherTabela" + erro.getMessage());
         }  
     }

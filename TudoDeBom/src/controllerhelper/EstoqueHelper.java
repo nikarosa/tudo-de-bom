@@ -44,7 +44,6 @@ public class EstoqueHelper {
         modeloProduto.setId(id);
         modeloProduto.setFlag_generico(generico);
         modeloProduto.setFlag_medicamento(medicamento);
-        modeloProduto.setMarcaProduto(marca);
         modeloProduto.setQuantidadeProduto(quantidade);
         modeloProduto.setValorProduto(valor);
         modeloProduto.setNomeProduto(nome);

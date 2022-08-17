@@ -34,15 +34,15 @@ public class LoginCaixaController {
         //pesquisar usuario do banco
         try {
             Caixa caixa = helper.obterModelo();
-        CaixaDAO caixaDAO = new CaixaDAO();
-        ResultSet rsCaixaDao = caixaDAO.loginCaixa(caixa);
+            CaixaDAO caixaDAO = new CaixaDAO();
+            ResultSet rsCaixaDao = caixaDAO.loginCaixa(caixa);
         
         if(rsCaixaDao.next()){
             MenuPrincipal telaMenu = new MenuPrincipal();
             telaMenu.setVisible(true);
             this.view.dispose();
         }else{
-            JOptionPane.showMessageDialog(null,"Uuario ou senha inválido ");
+            JOptionPane.showMessageDialog(null,"Usuario ou senha inválido ");
         }
            
         } catch (SQLException erro) {

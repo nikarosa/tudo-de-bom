@@ -21,12 +21,10 @@ public class ProdutoDAO {
     Connection conn;
     PreparedStatement pstm;
     ResultSet rs;
-    ArrayList<Produto> listaProduto = new ArrayList<Produto>();
+    ArrayList<Produto> listaProduto = new ArrayList<>();
 
 
     public void cadastrarProduto(Produto objProduto) throws ClassNotFoundException {
-
-        System.out.println("ALGUMA COISA!");
         String sql = "INSERT INTO produtos VALUES (?,?,?,?,?,?);";
 
         conn = new BancoDAO().conectaBD();
@@ -51,7 +49,7 @@ public class ProdutoDAO {
     
      public void atualizarProduto(Produto objProduto) throws ClassNotFoundException {
 
-        String sql = "UPDATE produtos SET  nome_produto = ?, marca_produto =?, qtd_produto = ?, valor_produto = ?, tipo_produto = ?, gen_produto = ? Where id_produtos = ? ;";
+        String sql = "UPDATE produtos SET  nome_produto = ?, qtd_produto = ?, valor_produto = ?, tipo_produto = ?, gen_produto = ? Where id_produtos = ? ;";
 
         conn = new BancoDAO().conectaBD();
 
@@ -59,12 +57,11 @@ public class ProdutoDAO {
 
             pstm = conn.prepareStatement(sql);
             pstm.setString(1, objProduto.getNomeProduto());
-            pstm.setString(2, objProduto.getMarcaProduto());
-            pstm.setInt(3, objProduto.getQuantidadeProduto());
-            pstm.setDouble(4, objProduto.getValorProduto());
-            pstm.setBoolean(5, objProduto.getFlag_medicamento());
-            pstm.setBoolean(6, objProduto.getFlag_generico());
-            pstm.setInt(7, objProduto.getId());
+            pstm.setInt(2, objProduto.getQuantidadeProduto());
+            pstm.setDouble(3, objProduto.getValorProduto());
+            pstm.setBoolean(4, objProduto.getFlag_medicamento());
+            pstm.setBoolean(5, objProduto.getFlag_generico());
+            pstm.setInt(6, objProduto.getId());
             pstm.execute();
             pstm.close();
 
@@ -87,7 +84,6 @@ public class ProdutoDAO {
                 Produto objProduto = new Produto();
                 objProduto.setId(rs.getInt("id_produtos"));
                 objProduto.setNomeProduto(rs.getString("nome_produto"));
-                objProduto.setMarcaProduto(rs.getString("marca_produto"));
                 objProduto.setValorProduto(rs.getDouble("valor_produto"));
                 objProduto.setQuantidadeProduto(rs.getInt("qtd_produto"));
                 objProduto.setFlag_medicamento(rs.getBoolean("tipo_produto"));
@@ -130,7 +126,6 @@ public class ProdutoDAO {
                 Produto obProduto = new Produto();
                 obProduto.setId(rs.getInt("id_produtos"));
                 obProduto.setNomeProduto(rs.getString("nome_produto"));
-                obProduto.setMarcaProduto(rs.getString("marca_produto"));
                 obProduto.setValorProduto(rs.getDouble("valor_produto"));
                 obProduto.setQuantidadeProduto(rs.getInt("qtd_produto"));
                 obProduto.setFlag_medicamento(rs.getBoolean("tipo_produto"));

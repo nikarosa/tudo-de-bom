@@ -6,6 +6,9 @@
 package view;
 
 import controller.MenuPrincipalController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -38,6 +41,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuItem1Estoque = new javax.swing.JMenuItem();
         menuPedido = new javax.swing.JMenu();
         menuItmRealizarPedido = new javax.swing.JMenuItem();
+        menuCliente = new javax.swing.JMenu();
+        menuGerenciarClientes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +82,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menuPedido);
 
+        menuCliente.setText("Cliente");
+        menuCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuClienteActionPerformed(evt);
+            }
+        });
+
+        menuGerenciarClientes.setText("Gerenciar Clientes");
+        menuGerenciarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuGerenciarClientesActionPerformed(evt);
+            }
+        });
+        menuCliente.add(menuGerenciarClientes);
+
+        jMenuBar1.add(menuCliente);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,7 +116,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1EstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1EstoqueActionPerformed
-     controller.navegarParaEstoque();   // TODO add your handling code here:
+        new Estoque().setVisible(true);   // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1EstoqueActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -102,8 +124,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void menuItmRealizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItmRealizarPedidoActionPerformed
-        new Pedido().setVisible(true);
+
+        try {
+            new Pedido().setVisible(true);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_menuItmRealizarPedidoActionPerformed
+
+    private void menuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuClienteActionPerformed
+
+    private void menuGerenciarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGerenciarClientesActionPerformed
+        try {
+            new Clientes().setVisible(true);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_menuGerenciarClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,10 +173,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuPrincipal().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MenuPrincipal().setVisible(true);
         });
     }
 
@@ -146,6 +184,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem1Estoque;
+    private javax.swing.JMenu menuCliente;
+    private javax.swing.JMenuItem menuGerenciarClientes;
     private javax.swing.JMenuItem menuItmRealizarPedido;
     private javax.swing.JMenu menuPedido;
     // End of variables declaration//GEN-END:variables

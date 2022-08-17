@@ -13,7 +13,6 @@ public class Produto {
     
     private int id;
     private String nomeProduto;
-    private String marcaProduto; 
     private double valorProduto;
     private int quantidadeProduto;
     private boolean flag_medicamento;
@@ -36,14 +35,6 @@ public class Produto {
 
     public void setNomeProduto(String nomeProduto) {
         this.nomeProduto = nomeProduto;
-    }
-
-    public String getMarcaProduto() {
-        return marcaProduto;
-    }
-
-    public void setMarcaProduto(String marcaProduto) {
-        this.marcaProduto = marcaProduto;
     }
 
     public double getValorProduto() {

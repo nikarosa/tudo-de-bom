@@ -16,7 +16,7 @@ public class CaixaDAO {
         conn = new BancoDAO().conectaBD();
         
         try {
-           String sql = "SELECT * FROM caixa WHERE emailCaixa = ? AND senhaCaixa = ? ";
+            String sql = "SELECT * FROM vendedor WHERE email_vendedor = ? AND senha_vendedor = ?;";
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, objCaixa.getEmailCaixa());
             pstm.setString(2, objCaixa.getSenhaCaixa());
